@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cukopve04gb32"]
+
+[ext_resource type="Script" uid="uid://887w5ek46tmq" path="res://weapons/shooting/basic_bullet.gd" id="1_4csn2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4csn2"]
+
+[node name="basic_bullet" type="Node3D" unique_id=741688355]
+script = ExtResource("1_4csn2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=172549743]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_4csn2")
+
+[node name="OmniLight3DFront" type="OmniLight3D" parent="." unique_id=1212866954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.22029757)
+light_color = Color(1, 0.5294118, 0, 1)
+light_energy = 5.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.2
+light_specular = 0.0
+
+[node name="OmniLight3D2back" type="OmniLight3D" parent="." unique_id=488288254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.17970243)
+light_color = Color(1, 0.5294118, 0, 1)
+light_energy = 5.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.2
+light_specular = 0.0
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1814875056]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.15)

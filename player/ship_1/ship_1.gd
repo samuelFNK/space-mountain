@@ -3,6 +3,8 @@ extends CharacterBody3D
 const min_speed:float = 1
 const max_speed:float = 50
 
+@onready var muzzle = $Muzzle
+
 var turn_speed:float = 1
 var pitch_speed:float = 0.5
 var level_speed:float = 3.0
@@ -17,7 +19,11 @@ var vel:Vector3 = Vector3.ZERO
 var turn_input:float = 0
 var pitch_input:float = 0
 
+@export var standard_attack:PackedScene
+
 func get_input(delta:float):
+	if Input.is_action_just_pressed("fire"):
+		standard_fire()
 	if Input.is_action_pressed("throttle_up"):
 		target_speed = min(current_speed + throttle_delta * delta, max_speed)
 	if Input.is_action_pressed("throttle_down"):
@@ -58,3 +64,11 @@ func _physics_process(delta:float) -> void:
 		grounded = false
 		
 	move_and_slide()
+
+func standard_fire():
+	if standard_attack == null:
+		return
+	
+	var bullet = standard_attack.instantiate()
+	bullet.global_transform = muzzle.global_transform
+	get_parent().add_child(bullet)

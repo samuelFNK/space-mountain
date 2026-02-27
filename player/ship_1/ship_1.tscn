@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dv5c0amteai4c"]
 
 [ext_resource type="Script" uid="uid://bovxlrqotvw41" path="res://player/ship_1/ship_1.gd" id="1_j7hyu"]
+[ext_resource type="PackedScene" uid="uid://cukopve04gb32" path="res://weapons/shooting/basic_bullet.tscn" id="2_ihhlh"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_8wdhg"]
 
@@ -9,6 +10,7 @@ height = 1.0
 
 [node name="Ship_1" type="CharacterBody3D" unique_id=1582411212]
 script = ExtResource("1_j7hyu")
+standard_attack = ExtResource("2_ihhlh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1910220150]
 mesh = SubResource("PrismMesh_8wdhg")
@@ -19,3 +21,6 @@ shape = SubResource("CylinderShape3D_j7hyu")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=969398150]
 transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202018, 0, -0.34202018, 0.9396926, 0, 1.3000001, 3.3)
+
+[node name="Muzzle" type="Node3D" parent="." unique_id=1455099298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -0.70000005)
