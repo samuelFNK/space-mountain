@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dol5alnif008l"]
 
 [ext_resource type="PackedScene" uid="uid://dv5c0amteai4c" path="res://player/ship_1/ship_1.tscn" id="1_nge8n"]
+[ext_resource type="PackedScene" uid="uid://btdlg0utfd45c" path="res://world/obstacles/static/small_asteroid.tscn" id="2_v5vov"]
+[ext_resource type="PackedScene" uid="uid://bc5lsivtlwsva" path="res://world/obstacles/static/big_asteroid.tscn" id="3_gp75b"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k1h3c"]
 
@@ -22,4 +24,19 @@ mesh = SubResource("PlaneMesh_nge8n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 44)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=141619739]
-transform = Transform3D(0.8660254, -2.1855694e-08, 0.5, -0.5, -3.7855173e-08, 0.8660254, 0, -1, -4.371139e-08, 0, 6, 0)
+transform = Transform3D(0.5735764, -3.5806274e-08, 0.819152, -0.819152, -2.5071824e-08, 0.5735764, 0, -1, -4.371139e-08, 0, 6, 0)
+
+[node name="small_asteroid" parent="." unique_id=1562985607 instance=ExtResource("2_v5vov")]
+transform = Transform3D(0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0, 1, 10.1237755, 9, 0)
+
+[node name="small_asteroid2" parent="." unique_id=397106628 instance=ExtResource("2_v5vov")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 2.1237755, 13, 0)
+
+[node name="small_asteroid3" parent="." unique_id=987075107 instance=ExtResource("2_v5vov")]
+transform = Transform3D(0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0, 1, 5.1237774, 14.284739, -11.712065)
+
+[node name="big_asteroid" parent="." unique_id=974602800 instance=ExtResource("3_gp75b")]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 6, 12, -5)
+
+[node name="big_asteroid2" parent="." unique_id=373699996 instance=ExtResource("3_gp75b")]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 14, 12, -18)

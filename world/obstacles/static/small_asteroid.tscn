@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://btdlg0utfd45c"]
+
+[ext_resource type="Script" uid="uid://ofjvx8leqp74" path="res://world/obstacles/static/small_asteroid.gd" id="1_01q62"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hij8f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_01q62"]
+
+[node name="small_asteroid" type="RigidBody3D" unique_id=1562985607]
+script = ExtResource("1_01q62")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1200945903]
+shape = SubResource("BoxShape3D_hij8f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1002583306]
+mesh = SubResource("BoxMesh_01q62")

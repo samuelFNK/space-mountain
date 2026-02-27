@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bc5lsivtlwsva"]
+
+[ext_resource type="Script" uid="uid://npp7vmjfyh82" path="res://world/obstacles/static/big_asteroid.gd" id="1_0c2lb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0s27m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0c2lb"]
+
+[node name="big_asteroid" type="RigidBody3D" unique_id=974602800]
+script = ExtResource("1_0c2lb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=67815673]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_0s27m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1893981734]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_0c2lb")

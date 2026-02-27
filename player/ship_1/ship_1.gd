@@ -1,12 +1,12 @@
 extends CharacterBody3D
 
-const min_speed:float = 10
-const max_speed:float = 30
+const min_speed:float = 1
+const max_speed:float = 50
 
-var turn_speed:float = 0.75
+var turn_speed:float = 1
 var pitch_speed:float = 0.5
 var level_speed:float = 3.0
-var throttle_delta:float = 30
+var throttle_delta:float = 40
 var acceleration:float = 6.0
 
 var current_speed:float = 0
@@ -24,7 +24,7 @@ func get_input(delta:float):
 		var min_limit:float = 0.0 if grounded else min_speed
 		target_speed = max(current_speed - throttle_delta * delta, min_limit)
 	turn_input = 0
-	if current_speed > 0.5: 
+	if current_speed > 0.1: 
 		turn_input = Input.get_action_strength("roll_left") - Input.get_action_strength("roll_right")
 	pitch_input = 0
 	if not grounded:
