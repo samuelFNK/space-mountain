@@ -8,5 +8,6 @@ func _physics_process(delta: float) -> void:
 	self.global_position = self.global_position + -transform.basis.z * speed * delta
 	
 	if $RayCast3D.is_colliding():
+		print("wow")
 		self.queue_free()
 	
