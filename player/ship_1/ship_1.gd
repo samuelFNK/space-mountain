@@ -1,9 +1,11 @@
 extends CharacterBody3D
 
-const min_speed:float = 1
+const min_speed:float = 0.5
 const max_speed:float = 50
 
 @onready var muzzle = $Muzzle
+
+@export var standard_attack:PackedScene
 
 var turn_speed:float = 1
 var pitch_speed:float = 0.5
@@ -19,8 +21,6 @@ var vel:Vector3 = Vector3.ZERO
 var turn_input:float = 0
 var pitch_input:float = 0
 
-@export var standard_attack:PackedScene
-
 func get_input(delta:float):
 	if Input.is_action_just_pressed("fire"):
 		standard_fire()
@@ -35,7 +35,7 @@ func get_input(delta:float):
 	pitch_input = 0
 	if not grounded:
 		pitch_input -= Input.get_action_strength("pitch_down") 
-	if current_speed >= 1:
+	if current_speed >= 0.1:
 		pitch_input += Input.get_action_strength("pitch_up")
 	
 func _physics_process(delta:float) -> void:
@@ -54,6 +54,8 @@ func _physics_process(delta:float) -> void:
 	vel = -transform.basis.z * current_speed
 	velocity = vel
 	
+	move_and_slide()
+	
 	if is_on_floor():
 		if not grounded:
 			rotation.x = 0
@@ -63,7 +65,6 @@ func _physics_process(delta:float) -> void:
 	else:
 		grounded = false
 		
-	move_and_slide()
 
 func standard_fire():
 	if standard_attack == null:
