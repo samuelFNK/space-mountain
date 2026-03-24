@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d1hqvokwee8em"]
+
+[ext_resource type="Script" uid="uid://c35y1npf53jjy" path="res://ui/system/pause_menu.gd" id="1_j0kv2"]
+
+[node name="pause_menu" type="CanvasLayer" unique_id=1558402760]
+
+[node name="Control" type="Control" parent="." unique_id=373377925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0kv2")
+
+[node name="Panel" type="Panel" parent="Control" unique_id=350501430]
+modulate = Color(0.36871722, 0.56863016, 1, 1)
+self_modulate = Color(1, 0.3279746, 0.9926247, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=907783994]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -151.0
+offset_right = 291.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1023075170]
+layout_mode = 2
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="continue" type="Button" parent="Control/VBoxContainer" unique_id=985434130]
+layout_mode = 2
+text = "Continue"
+
+[node name="exit" type="Button" parent="Control/VBoxContainer" unique_id=122548153]
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="pressed" from="Control/VBoxContainer/continue" to="Control" method="_on_continue_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/exit" to="Control" method="_on_exit_pressed"]

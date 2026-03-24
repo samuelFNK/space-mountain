@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dv5c0amteai4c" path="res://player/ship_1/ship_1.tscn" id="1_nge8n"]
 [ext_resource type="PackedScene" uid="uid://btdlg0utfd45c" path="res://world/obstacles/static/small_asteroid.tscn" id="2_v5vov"]
 [ext_resource type="PackedScene" uid="uid://bc5lsivtlwsva" path="res://world/obstacles/static/big_asteroid.tscn" id="3_gp75b"]
+[ext_resource type="PackedScene" uid="uid://d1hqvokwee8em" path="res://ui/system/pause_menu.tscn" id="4_ag0ly"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k1h3c"]
 
@@ -58,3 +59,5 @@ environment = SubResource("Environment_3gy8o")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=141619739]
 transform = Transform3D(0.57357645, -3.5806274e-08, 0.81915206, -0.81915206, -2.5071824e-08, 0.57357645, 0, -1, -4.371139e-08, 0, 6, 0)
 light_energy = 2.0
+
+[node name="pause_menu" parent="." unique_id=1063146972 instance=ExtResource("4_ag0ly")]
