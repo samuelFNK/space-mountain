@@ -8,6 +8,20 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nge8n"]
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gp75b"]
+rayleigh_color = Color(0, 0, 0, 1)
+mie_color = Color(0.4372378, 0.62906706, 1, 1)
+turbidity = 1.0
+ground_color = Color(1, 1, 1, 1)
+energy_multiplier = 3.0
+
+[sub_resource type="Sky" id="Sky_ag0ly"]
+sky_material = SubResource("PhysicalSkyMaterial_gp75b")
+
+[sub_resource type="Environment" id="Environment_3gy8o"]
+background_mode = 2
+sky = SubResource("Sky_ag0ly")
+
 [node name="Test_level_1" type="Node3D" unique_id=674528376]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2104514543]
@@ -23,9 +37,6 @@ mesh = SubResource("PlaneMesh_nge8n")
 [node name="Ship_1" parent="." unique_id=1582411212 instance=ExtResource("1_nge8n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 44)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=141619739]
-transform = Transform3D(0.5735764, -3.5806274e-08, 0.819152, -0.819152, -2.5071824e-08, 0.5735764, 0, -1, -4.371139e-08, 0, 6, 0)
-
 [node name="small_asteroid" parent="." unique_id=1562985607 instance=ExtResource("2_v5vov")]
 transform = Transform3D(0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0, 1, 10.1237755, 9, 0)
 
@@ -40,3 +51,10 @@ transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 6, 12, -
 
 [node name="big_asteroid2" parent="." unique_id=373699996 instance=ExtResource("3_gp75b")]
 transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 14, 12, -18)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=283523234]
+environment = SubResource("Environment_3gy8o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=141619739]
+transform = Transform3D(0.57357645, -3.5806274e-08, 0.81915206, -0.81915206, -2.5071824e-08, 0.57357645, 0, -1, -4.371139e-08, 0, 6, 0)
+light_energy = 2.0
